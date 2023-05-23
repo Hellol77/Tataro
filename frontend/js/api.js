@@ -126,7 +126,7 @@ async function getTaro() {
     const myQuestion = myChat();
     // 타로 질문 주고 결과 받는 api
     setSpinner();
-    const response = await fetch(process.SERVER_URL, {
+    const response = await fetch(SERVER_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
