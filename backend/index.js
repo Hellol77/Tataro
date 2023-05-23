@@ -14,7 +14,7 @@ const openai = new OpenAIApi(configuration);
 
 // cors 이슈해결
 const corsOptions = {
-  origin: "https://tataro.pages.dev/",
+  origin: "https://tataro.pages.dev",
   credentials: true,
 };
 
@@ -25,8 +25,6 @@ app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.post("/taro", async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-
   let { userMessages, assistantMessages } = req.body;
 
   let messages = [
