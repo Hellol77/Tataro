@@ -1,6 +1,7 @@
 //apiKey에 openAi api를 넣어야한다.
 require("dotenv").config();
 const apiKey = process.env.CHAT_GPT_KEY;
+const serverless = require("serverless-http");
 const { Configuration, OpenAIApi } = require("openai");
 const cors = require("cors");
 const express = require("express");
@@ -12,12 +13,12 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 // cors 이슈해결
-// const corsOptions = {
-//   origin: "http://127.0.0.1:5500",
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: "https://tataro.pages.dev/",
+  credentials: true,
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // post 요청
 app.use(express.json()); // for parsing application/json
@@ -76,4 +77,6 @@ app.post("/taro", async function (req, res) {
   res.json({ assistant: taro });
 });
 
-app.listen(3000);
+module.exports.handler = serverless(app);  //serverless 사용
+
+// app.listen(3000);
