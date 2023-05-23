@@ -1,0 +1,134 @@
+#share_page {
+  display: none;
+}
+.share_Box {
+  margin-top: 20px;
+  width: 310px;
+  height: 600px;
+  background-color: #e5e7ff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.share_title_box {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  margin-top: 30px;
+}
+
+.share_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f0eb8d;
+  margin-top: 30px;
+  margin-left: 23px;
+  position: relative;
+  z-index: 2;
+}
+
+.share_subtitle_1 {
+  -webkit-text-stroke: 1px black;
+  font-size: 27px;
+}
+
+.share_subtitle_2 {
+  -webkit-text-stroke: 1px black;
+  font-size: 60px;
+}
+.share_button_box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.share_button {
+  color: black;
+  background-color: #ffcfc0;
+  width: 65px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 10px;
+}
+
+.share_img {
+  position: absolute;
+  width: 130px;
+  height: 160px;
+  top: 4%;
+  left: 50.5%;
+  z-index: 1;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.share_myChatBox {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+.share_myChat {
+  border-radius: 15px;
+  background-color: #c0c7ff;
+  width: 172px;
+
+  margin-right: 17px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  line-height: 23px;
+  font-size: 9px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.share_cardBox {
+  display: flex;
+  justify-content: space-evenly;
+  background: #36364d;
+  border-radius: 20px;
+  width: 278px;
+  height: 171px;
+  margin-top: 20px;
+}
+
+.share_card {
+  width: 60px;
+  height: 104px;
+  margin-top: 20px;
+  color: white;
+  font-size: 19px;
+}
+
+.share_cardTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.share_tataroChat {
+  width: 80%;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 15px;
+  background-color: #fffae1;
+  padding: 15px;
+  line-height: 22px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  overflow-y: scroll;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 768px) {
+  .share_Box {
+    height: 80vh;
+  }
+}

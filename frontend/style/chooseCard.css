@@ -1,0 +1,82 @@
+#chooseCard_page {
+  display: none;
+}
+.chooseCard_background {
+  position: fixed;
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(
+    10.32deg,
+    #2f244d 12.47%,
+    #6e3690 25.69%,
+    #f48859 48.29%,
+    #6e3690 73.87%,
+    #2f244d 94.34%
+  );
+  color: white;
+}
+
+.chooseCard_title_box {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.chooseCard_tataro {
+  width: 150px;
+  height: 200px;
+}
+.chooseCard_sub_title {
+  text-align: center;
+  margin-top: 30px;
+  line-height: 25px;
+}
+
+.chooseCard_choose_card_content {
+  display: flex;
+  height: 230px;
+  width: 100vw;
+}
+.chooseCard_card_box {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+/* .card_box::-webkit-scrollbar {
+  display: none;
+} */
+
+.chooseCard_card {
+  width: 100px;
+  height: 150px;
+  transition: all 0.4s;
+  margin-left: -20px;
+}
+
+.chooseCard_card_onclick {
+  transform: translateY(-30px);
+}
+
+#chooseCard_select {
+  display: none;
+  background-color: #c0c7ff;
+  border: none;
+  border-radius: 40px;
+  width: 186px;
+  height: 57px;
+  font-size: 30px;
+  font-family: "KCCChassam";
+  color: #2f244d;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+/* .card_off {
+  transform: translateY(0);
+} */
+//모바일에서는 변경 필요

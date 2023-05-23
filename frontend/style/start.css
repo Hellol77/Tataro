@@ -1,0 +1,40 @@
+.title_box {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-top: 54px;
+  color: #f0eb8d;
+}
+
+.title_box_text-1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.title_box_text-2 {
+  font-size: 75px;
+  margin-bottom: 10px;
+}
+
+.sub_title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+.start_button {
+  background-color: #c0c7ff;
+  border: none;
+  border-radius: 40px;
+  width: 186px;
+  height: 57px;
+  font-size: 30px;
+  font-family: "KCCChassam";
+  margin-top: 30px;
+  color: #2f244d;
+}
+.index_tataro {
+  width: 160px;
+  height: 250px;
+}

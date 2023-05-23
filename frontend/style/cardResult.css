@@ -1,0 +1,71 @@
+#cardResult_page {
+  display: none;
+}
+
+.cardResult_word {
+  margin-bottom: 30px;
+}
+.cardResult_word1 {
+  font-family: "KCCChassam";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 21px;
+}
+
+.cardResult_word2 {
+  font-family: "KCCChassam";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 21px;
+  margin-top: 10px;
+}
+
+.cardResult_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+.cardResult_card_img {
+  width: 100px;
+  height: 180px;
+  margin-bottom: 10px;
+}
+/* .card_name{
+    font-family: "KCCChassam";
+    color: white;
+    font-size: 23px;
+    word-spacing: ;
+
+} */
+.cardResult_card_box {
+  display: flex;
+  justify-content: center;
+  width: 330px;
+}
+.cardResult_tataro {
+  margin-top: 63px;
+  width: 120px;
+  height: 140px;
+  margin-bottom: 30px;
+}
+
+#result {
+  font-family: "KCCChassam";
+  width: 186px;
+  height: 57px;
+  background-color: #c0c7ff;
+  border-radius: 40px;
+  box-shadow: 6px 4px 20px rgba(0, 0, 0, 0.25);
+  font-size: 25px;
+  border: 1px;
+  color: #2f244d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
