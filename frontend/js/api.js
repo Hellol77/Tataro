@@ -39,14 +39,16 @@ const myChat = () => {
   myChat.classList.add("totalResult_myChat");
   myChatTime.innerText = sendTime();
   myChatBox.appendChild(myChatTime);
-  
+
   // 첫번째 질문
   if (!!questionInput.value == true) {
     myChat.innerText = questionInput.value;
     userMessages.push(questionInput.value);
 
     //카드 세장 뽑기 프론트 버전
-    userMessages.push(`${selectTaro[0][1]} ${selectTaro[1][1]} ${selectTaro[2][1]}`);
+    userMessages.push(
+      `${selectTaro[0][1]} ${selectTaro[1][1]} ${selectTaro[2][1]}`
+    );
 
     myQuestion = questionInput.value;
     questionInput.value = "";
@@ -124,7 +126,7 @@ async function getTaro() {
     const myQuestion = myChat();
     // 타로 질문 주고 결과 받는 api
     setSpinner();
-    const response = await fetch("http://localhost:3000/taro", {
+    const response = await fetch(SERVER_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
