@@ -146,6 +146,7 @@ async function getTaro() {
     chatInput.disabled = false;
     return data;
   } catch (error) {
+    window.alert("서버 에러입니다. 다시 접속해주세요!");
     console.log(error);
   }
 }
