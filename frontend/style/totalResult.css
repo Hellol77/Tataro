@@ -108,10 +108,3 @@
   border: none;
   border-radius: 10px;
 }
-
-//모바일 뷰일때 채팅박스 크기 조정
-@media (max-width: 768px) {
-  .totalResult_Box {
-    height: 20vh;
-  }
-}

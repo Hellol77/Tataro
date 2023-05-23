@@ -4,7 +4,7 @@
 .share_Box {
   margin-top: 20px;
   width: 310px;
-  height: 600px;
+  height: 100%;
   background-color: #e5e7ff;
   border-radius: 20px;
   display: flex;
@@ -126,9 +126,4 @@
   text-overflow: ellipsis;
   overflow-y: scroll;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-}
-@media (max-width: 768px) {
-  .share_Box {
-    height: 80vh;
-  }
 }
