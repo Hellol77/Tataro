@@ -127,7 +127,7 @@ async function getTaro() {
     // 타로 질문 주고 결과 받는 api
     setSpinner();
     const response = await fetch(
-      "https://jivbftmrucu77b73iap3ofhydq0uhuzr.lambda-url.ap-northeast-2.on.aws/taro",
+      " https://jivbftmrucu77b73iap3ofhydq0uhuzr.lambda-url.ap-northeast-2.on.aws/taro",
       {
         method: "POST",
         headers: {
