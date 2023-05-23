@@ -126,16 +126,19 @@ async function getTaro() {
     const myQuestion = myChat();
     // 타로 질문 주고 결과 받는 api
     setSpinner();
-    const response = await fetch(SERVER_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userMessages: userMessages,
-        assistantMessages: assistantMessages,
-      }),
-    });
+    const response = await fetch(
+      "https://jivbftmrucu77b73iap3ofhydq0uhuzr.lambda-url.ap-northeast-2.on.aws/taro",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userMessages: userMessages,
+          assistantMessages: assistantMessages,
+        }),
+      }
+    );
     const data = await response.json();
     assistantMessages.push(data.assistant);
     eraseSpinner();
