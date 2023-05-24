@@ -7,6 +7,8 @@ let first = true;
 let userMessages = [];
 let assistantMessages = [];
 
+let myFirstQuestion;
+let tataroFirstAnswer;
 // 채팅 보낸 시간을 리턴하는 함수
 const sendTime = () => {
   const time = new Date();
@@ -43,6 +45,7 @@ const myChat = () => {
   // 첫번째 질문
   if (!!questionInput.value == true) {
     myChat.innerText = questionInput.value;
+    myFirstQuestion = questionInput.value;
     userMessages.push(questionInput.value);
 
     //카드 세장 뽑기 프론트 버전
@@ -80,7 +83,7 @@ const tataroChat = (assistant, myQuestion) => {
     totalResultButton.classList.add("totalResult_button");
     const totalResultShare = document.createElement("div");
     totalResultShare.classList.add("totalResult_share");
-    totalResultShare.innerText = "이미지 저장";
+    totalResultShare.innerText = "공유하기";
     const totalResultResume = document.createElement("div");
     totalResultResume.classList.add("totalResult_share");
     totalResultResume.innerText = "다시하기";
@@ -88,6 +91,7 @@ const tataroChat = (assistant, myQuestion) => {
     totalResultButton.appendChild(totalResultResume);
     tataroChat.appendChild(totalResultButton);
     shareMychat.innerText = myQuestion;
+    tataroFirstAnswer = assistant;
 
     totalResultResume.addEventListener("click", () => {
       window.location.reload();

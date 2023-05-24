@@ -205,12 +205,6 @@
           <div class="share_title">
             <p class="share_subtitle_1">타로보는</p>
             <p class="share_subtitle_2">타타로</p>
-            <div class="share_button_box">
-              <div class="share_button" id="sharePageButton">다시하기</div>
-              <div class="share_button" id="sharePageButtonImg">
-                이미지 저장
-              </div>
-            </div>
           </div>
           <img src="img/tataro.png" alt="" class="share_img" />
         </div>
@@ -255,6 +249,16 @@
           <!-- 타타로의 대답을 넣는 곳 -->
         </div>
       </div>
+      <div class="share_button_box">
+        <div class="share_button" id="sharePageButtonReload">다시하기</div>
+        <div class="share_button" id="sharePageButtonImg">이미지 저장</div>
+        <a
+          class="share_button"
+          id="sharePageButtonShare"
+          href="javascript:shareMessage()"
+          >공유하기</a
+        >
+      </div>
     </div>
 
     <!-- Share 끝 -->
@@ -272,6 +276,14 @@
         async
       ></script>
     </div>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+      integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Kakao.init("8333dcfe7848e810904efdd453c27961"); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="js/chooseCard.js"></script>
@@ -279,5 +291,6 @@
     <script src="js/api.js"></script>
     <script src="js/cardResult.js"></script>
     <script src="js/download.js"></script>
+    <script src="js/kakaoShare.js"></script>
   </body>
 </html>

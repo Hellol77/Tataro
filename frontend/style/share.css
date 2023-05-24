@@ -1,9 +1,9 @@
 #share_page {
-  display: none;
+  display: flex;
 }
 .share_Box {
   margin-top: 60px;
-  width: 310px;
+  width: 320px;
   height: 100%;
   background-color: #e5e7ff;
   border-radius: 20px;
@@ -43,26 +43,29 @@
 }
 .share_button_box {
   display: flex;
-  justify-content: space-evenly;
+  margin-top: 15px;
+  justify-content: center;
   width: 100%;
 }
 .share_button {
   color: black;
   background-color: #ffcfc0;
-  width: 65px;
+  width: 88px;
   height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   font-size: 10px;
+  margin: 0px 10px;
+  text-decoration-line: none;
 }
 
 .share_img {
   position: absolute;
   width: 130px;
   height: 160px;
-  top: -8%;
+  top: -23%;
   left: 52%;
   z-index: 1;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
@@ -72,7 +75,7 @@
   display: flex;
   width: 100%;
   justify-content: right;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .share_myChat {
@@ -126,4 +129,18 @@
   text-overflow: ellipsis;
   overflow-y: scroll;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 767px) {
+  .share_Box {
+    margin-top: 60px;
+    width: 320px;
+    height: 73vh;
+    background-color: #e5e7ff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  }
 }

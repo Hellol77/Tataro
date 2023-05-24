@@ -14,7 +14,7 @@ const totalResultShareButton = document.getElementById(
 const totalResultResumeButton = document.getElementById(
   "totalResultResume_button"
 );
-const shareButton = document.getElementById("sharePageButton");
+const shareButtonReload = document.getElementById("sharePageButtonReload");
 const sharePage = document.getElementById("share_page");
 
 startButton.addEventListener("click", () => {
@@ -40,7 +40,7 @@ cardResultButton.addEventListener("click", () => {
 // totalResultResumeButton.addEventListener("click", () => {
 //   window.location.reload();
 // });
-shareButton.addEventListener("click", () => {
+shareButtonReload.addEventListener("click", () => {
   window.location.reload();
 });
 
