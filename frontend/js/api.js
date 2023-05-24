@@ -156,11 +156,31 @@ async function getTaro() {
 }
 
 function shareMessage() {
-  Kakao.Share.sendCustom({
-    templateId: 94226,
-    templateArgs: {
+  Kakao.Share.sendDefault({
+    objectType: "feed",
+    content: {
       title: myFirstQuestion,
       description: tataroFirstAnswer,
+      imageUrl: "img/tataro.png",
+      link: {
+        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+        mobileWebUrl: "https://tataro.pages.dev/",
+        webUrl: "https://tataro.pages.dev/",
+      },
     },
+    social: {
+      likeCount: 286,
+      commentCount: 45,
+      sharedCount: 845,
+    },
+    buttons: [
+      {
+        title: "타로보기",
+        link: {
+          mobileWebUrl: "https://tataro.pages.dev/",
+          webUrl: "https://tataro.pages.dev/",
+        },
+      },
+    ],
   });
 }
