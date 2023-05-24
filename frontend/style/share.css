@@ -132,15 +132,6 @@
 }
 @media (max-width: 767px) {
   .share_Box {
-    margin-top: 60px;
-    width: 320px;
     height: 73vh;
-    background-color: #e5e7ff;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   }
 }
