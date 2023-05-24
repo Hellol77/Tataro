@@ -2,7 +2,7 @@
   display: none;
 }
 .share_Box {
-  margin-top: 20px;
+  margin-top: 60px;
   width: 310px;
   height: 100%;
   background-color: #e5e7ff;
@@ -19,6 +19,7 @@
   width: 100%;
   justify-content: left;
   margin-top: 30px;
+  position: relative;
 }
 
 .share_title {
@@ -28,7 +29,6 @@
   color: #f0eb8d;
   margin-top: 30px;
   margin-left: 23px;
-  position: relative;
   z-index: 2;
 }
 
@@ -62,8 +62,8 @@
   position: absolute;
   width: 130px;
   height: 160px;
-  top: 4%;
-  left: 50.5%;
+  top: -8%;
+  left: 52%;
   z-index: 1;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
