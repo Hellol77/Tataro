@@ -46,7 +46,7 @@ const myChat = () => {
   if (!!questionInput.value == true) {
     myChat.innerText = questionInput.value;
     // myFirstQuestion = questionInput.value;
-    userMessages.push(questionInput.value);
+    userMessages.push(questionInput.value); //사용자 질문 저장
 
     //카드 세장 뽑기 프론트 버전
     userMessages.push(
@@ -125,11 +125,12 @@ const eraseSpinner = () => {
 };
 
 async function getTaro() {
-  try {
-    chatInput.disabled = true;
-    const myQuestion = myChat();
-    // 타로 질문 주고 결과 받는 api
-    setSpinner();
+  try { // 정상적으로 실행될 때 수행되는 곳
+    chatInput.disabled = true; // 타타로에게 답변을 받기 전에 사용자가 다시 질문을 보내면 error가 나기 때문에 input 비활성화를 해준다.
+    const myQuestion = myChat(); // 사용자의 질문을 채팅창에 나타나게하는 함수
+    setSpinner(); // 타타로에게 답변이 오기전 스피너 생성 함수
+
+    // 타로 질문 주고 결과 받는 api, userMessages 와 assistantMessages에 사용자와 타타로가 대화할때마다 대화를 저장한다.
     const response = await fetch(
       " https://jivbftmrucu77b73iap3ofhydq0uhuzr.lambda-url.ap-northeast-2.on.aws/taro",
       {
@@ -144,42 +145,14 @@ async function getTaro() {
       }
     );
     const data = await response.json();
-    assistantMessages.push(data.assistant);
-    eraseSpinner();
-    tataroChat(data.assistant, myQuestion);
-    chatInput.disabled = false;
+    assistantMessages.push(data.assistant); // 타타로의 답변을 저장
+    eraseSpinner(); // 스피너 지워주는 함수
+
+    tataroChat(data.assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
+    chatInput.disabled = false; // input의 비활성화를 풀어준다.
     return data;
-  } catch (error) {
+  } catch (error) { //에러가 났을때 수행되는 곳
     window.alert("서버 에러입니다. 다시 접속해주세요!");
     console.log(error);
   }
-}
-
-function shareMessage() {
-  Kakao.Share.sendDefault({
-    objectType: "feed",
-    itemContent: {
-      profileText: "타로보는 타타로",
-    },
-    content: {
-      title: "인공지능 타타로에게 타로를 봐보세요!",
-      description: "타타로는 모든 질문에 대답합니다!",
-      imageUrl: "https://ifh.cc/g/7hBLkx.jpg",
-      link: {
-        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: "https://tataro.pages.dev/",
-        webUrl: "https://tataro.pages.dev/",
-      },
-    },
-
-    buttons: [
-      {
-        title: "타로보기",
-        link: {
-          mobileWebUrl: "https://tataro.pages.dev/",
-          webUrl: "https://tataro.pages.dev/",
-        },
-      },
-    ],
-  });
 }
