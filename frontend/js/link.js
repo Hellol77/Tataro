@@ -51,7 +51,7 @@ cardResultButton.addEventListener("click", () => {
 //   window.location.reload();
 // });
 totalResultButton.addEventListener("click", () => {
-  if (chatInput.disabled == true) {
+  if (chatInput.disabled == true || chatInput.value == "") {
     return;
   } else {
     getTaro();
