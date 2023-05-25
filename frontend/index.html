@@ -82,10 +82,11 @@
         <input
           type="text"
           class="insert_text_input"
+          id="insert_text_input_value"
           placeholder="너의 고민을 입력해!"
           onkeypress="if( event.keyCode == 13 ){inputEnterKey();}"
         />
-        <div class="insert_next_button" id="second_button" onclick="getTaro()">
+        <div class="insert_next_button" id="second_button">
           <div class="triangle"></div>
         </div>
       </div>
@@ -205,9 +206,10 @@
           <input
             type="text"
             class="totalResult_input"
-            onkeypress="if( event.keyCode == 13 ){inputEnterKey();}"
+            id="totalResult_input_value"
+            onkeypress="if( event.keyCode == 13 ){totalResultInputEnterKey();}"
           />
-          <div class="insert_next_button" onclick="getTaro()">
+          <div class="insert_next_button" id="totalResult_Button">
             <div class="triangle"></div>
           </div>
         </div>
