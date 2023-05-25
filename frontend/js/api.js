@@ -7,8 +7,8 @@ let first = true;
 let userMessages = [];
 let assistantMessages = [];
 
-let myFirstQuestion;
-let tataroFirstAnswer;
+// let myFirstQuestion;
+// let tataroFirstAnswer;
 // 채팅 보낸 시간을 리턴하는 함수
 const sendTime = () => {
   const time = new Date();
@@ -45,7 +45,7 @@ const myChat = () => {
   // 첫번째 질문
   if (!!questionInput.value == true) {
     myChat.innerText = questionInput.value;
-    myFirstQuestion = questionInput.value;
+    // myFirstQuestion = questionInput.value;
     userMessages.push(questionInput.value);
 
     //카드 세장 뽑기 프론트 버전
@@ -91,7 +91,7 @@ const tataroChat = (assistant, myQuestion) => {
     totalResultButton.appendChild(totalResultResume);
     tataroChat.appendChild(totalResultButton);
     shareMychat.innerText = myQuestion;
-    tataroFirstAnswer = assistant;
+    // tataroFirstAnswer = assistant;
 
     totalResultResume.addEventListener("click", () => {
       window.location.reload();
@@ -162,8 +162,8 @@ function shareMessage() {
       profileText: "타로보는 타타로",
     },
     content: {
-      title: myFirstQuestion,
-      description: tataroFirstAnswer,
+      title: "인공지능 타타로에게 타로를 봐보세요!",
+      description: "타타로는 모든 질문에 대답합니다!",
       imageUrl: "https://ifh.cc/g/7hBLkx.jpg",
       link: {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
