@@ -1,1 +1,1 @@
-Kakao.init(process.env.KAKAO_APIKEY);
+Kakao.init(import.meta.env.KAKAO_APIKEY);
