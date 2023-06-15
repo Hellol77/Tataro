@@ -1,1 +1,1 @@
-Kakao.init(KAKAO_APIKEY);
+Kakao.init(process.env.KAKAO_APIKEY);
