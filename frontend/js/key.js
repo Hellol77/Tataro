@@ -1,1 +1,1 @@
-Kakao.init(import.meta.env.KAKAO_APIKEY);
+Kakao.init(window.env.KAKAO_APIKEY);
