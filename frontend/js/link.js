@@ -22,6 +22,14 @@ const totalResultInputValue = document.getElementById(
 const shareButtonReload = document.getElementById("sharePageButtonReload");
 const sharePage = document.getElementById("share_page");
 
+insertValue.addEventListener("focus", function () {
+  window.scrollTo(0, document.body.scrollHeight);
+});
+
+totalResultInputValue.addEventListener("focus", function () {
+  window.scrollTo(0, document.body.scrollHeight);
+});
+
 startButton.addEventListener("click", () => {
   startPage.style.display = "none";
   insertPage.style.display = "flex";
