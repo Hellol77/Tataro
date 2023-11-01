@@ -1,0 +1,111 @@
+#totalResult_page {
+  display: none;
+}
+.totalResult_tataro {
+  width: 90px;
+  height: 104px;
+  margin-top: 20px;
+}
+.totalResult_Box {
+  margin-top: 70px;
+  width: 310px;
+  height: 33rem;
+  background-color: #e5e7ff;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.totalResult_chatBox {
+  height: 100%;
+  overflow-y: scroll;
+}
+.totalResult_myChatBox {
+  display: flex;
+  justify-content: right;
+  position: relative;
+  margin: 15px 0px;
+}
+
+.totalResult_myChat {
+  border-radius: 15px;
+  background-color: #c0c7ff;
+  width: 172px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  line-height: 23px;
+}
+.totalResult_myChatTime {
+  font-size: 7px;
+  position: absolute;
+  right: 210px;
+  bottom: 3px;
+}
+
+.totalResult_tataroChatBox {
+  display: flex;
+  justify-content: left;
+  position: relative;
+  margin: 15px 0px;
+}
+
+.totalResult_tataroChat {
+  border-radius: 15px;
+  background-color: #fffae1;
+  width: 172px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  line-height: 23px;
+  flex-direction: column;
+  text-align: center;
+}
+.spinner {
+  display: flex;
+  justify-content: left;
+  position: relative;
+  margin: 15px 0px;
+}
+
+.totalResult_tataroChatTime {
+  font-size: 7px;
+  position: absolute;
+  left: 210px;
+  bottom: 3px;
+}
+
+.totalResult_share {
+  background-color: #ffcfc0;
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 25px;
+  border-radius: 15px;
+}
+.totalResult_button {
+  margin-top: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalResult_inputBox {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.totalResult_input {
+  width: 233px;
+  height: 40px;
+  padding-left: 10px;
+  background-color: #c0c7ff;
+  border: none;
+  border-radius: 10px;
+}

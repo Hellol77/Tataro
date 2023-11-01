@@ -1,0 +1,30 @@
+@import "reset.css";
+@import "start.css";
+@import "insert.css ";
+@import "chooseCard.css";
+@import "cardResult.css";
+@import "totalResult.css";
+@import "share.css";
+
+#app {
+  color: red;
+}
+
+.content {
+  position: fixed;
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    10.32deg,
+    #2f244d 12.47%,
+    #6e3690 25.69%,
+    #ffece4 48.29%,
+    #6e3690 73.87%,
+    #2f244d 94.34%,
+    #2f244d 94.34%
+  );
+}
