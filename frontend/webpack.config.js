@@ -29,7 +29,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        type: "asset/resource",
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
