@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="google-site-verification"
+      content="0-PM9YIs9X5eNoH0pRnE3jtibqvufFNkOEzf6DRgAHA"
+    />
+    <meta
+      name="naver-site-verification"
+      content="ea7c11c91a9124cc825754cef182938d79eaa88a"
+    />
+    <meta name="description" content="인공지능 타타로가 타로를 봐줍니다!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="타로보는 타타로" />
+    <meta
+      property="og:description"
+      content="인공지능 타타로가 타로를 봐줍니다!"
+    />
+    <meta property="og:image" content="https://ifh.cc/g/7hBLkx.jpg" />
+    <meta property="og:url" content="https://tataro.pages.dev/" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/content.css" />
+    <link rel="stylesheet" href="./style/start.css" />
+    <link rel="stylesheet" href="./style/insert.css" />
+    <link rel="stylesheet" href="./style/chooseCard.css" />
+    <link rel="stylesheet" href="./style/cardResult.css" />
+    <link rel="stylesheet" href="./style/totalResult.css" />
+    <link rel="stylesheet" href="./style/share.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/tataro.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <title>타로보는 타타로</title>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3301302066269146"
+      crossorigin="anonymous"
+    ></script>
+    <script defer="defer" src="bundle.js"></script>
+  </head>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-ZE03PRDYFS"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-ZE03PRDYFS");
+  </script>
+  <body>
+    <div class="content start" id="start_page">
+      <div class="title_box">
+        <div class="title_box_text-1">타로보는</div>
+        <div class="title_box_text-2">타타로</div>
+      </div>
+      <div class="sub_title">인공지능 타타로가 타로를 봐줄게!</div>
+      <img src="img/tataro.png" alt="tataro" class="index_tataro" />
+      <button class="start_button" id="first_button">Start</button>
+    </div>
+    <div class="content" id="insert_page">
+      <div class="insert_title_box insert_first_box">
+        <div class="insert_title_box_text-1">타타로에게 너의 고민을 말해줘</div>
+      </div>
+      <div class="insert_title_box insert_second_box">
+        <div class="insert_title_box_text-2">단순해도 좋고</div>
+        <div class="insert_title_box_text-2">자세하면 더 좋아!</div>
+      </div>
+      <img src="img/tataro.png" alt="tataro" />
+      <div class="insert_input_box">
+        <input
+          class="insert_text_input"
+          id="insert_text_input_value"
+          placeholder="너의 고민을 입력해!"
+          onkeypress="if( event.keyCode == 13 ){inputEnterKey();}"
+        />
+        <div class="insert_next_button" id="second_button">
+          <div class="triangle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="chooseCard_background" id="chooseCard_page">
+      <div class="chooseCard_title_box">
+        <div class="chooseCard_title_box_text-1">
+          그렇구나! 타로점을 보기위해 카드를 세장 뽑아줘!
+        </div>
+      </div>
+      <img src="img/tataro.png" alt="tataro" class="chooseCard_tataro" />
+      <div class="chooseCard_choose_card_content">
+        <div class="chooseCard_card_box" id="chooseCard_cardBox"></div>
+      </div>
+      <div id="chooseCard_select">선택하기</div>
+    </div>
+    <div class="content" id="cardResult_page">
+      <img src="img/tataro.png" class="cardResult_tataro" />
+      <div class="cardResult_word">
+        <div class="cardResult_word1">짠!</div>
+        <div class="cardResult_word2">이게 너가 뽑은 카드야</div>
+      </div>
+      <div class="cardResult_card_box">
+        <div class="cardResult_card">
+          <img id="card1_img" class="cardResult_card_img" src="" alt="" />
+          <div id="card1_title"></div>
+        </div>
+        <div class="cardResult_card">
+          <img id="card2_img" class="cardResult_card_img" src="" alt="" />
+          <div id="card2_title"></div>
+        </div>
+        <div class="cardResult_card">
+          <img id="card3_img" class="cardResult_card_img" src="" alt="" />
+          <div id="card3_title"></div>
+        </div>
+      </div>
+      <div id="result">결과보기</div>
+    </div>
+    <div class="content" id="totalResult_page">
+      <div class="totalResult_Box">
+        <div class="totalResult_chatBox"></div>
+        <div class="totalResult_inputBox">
+          <input
+            class="totalResult_input"
+            id="totalResult_input_value"
+            onkeypress="if( event.keyCode == 13 ){totalResultInputEnterKey();}"
+          />
+          <div class="insert_next_button" id="totalResult_Button">
+            <div class="triangle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="share_page">
+      <div class="share_Box" id="copy_div">
+        <div class="share_title_box">
+          <div class="share_title">
+            <p class="share_subtitle_1">타로보는</p>
+            <p class="share_subtitle_2">타타로</p>
+          </div>
+          <img src="img/tataro.png" alt="" class="share_img" />
+        </div>
+        <div class="share_myChatBox"><div class="share_myChat"></div></div>
+        <div class="share_tataroChat"></div>
+      </div>
+      <div class="share_button_box">
+        <div class="share_button" id="sharePageButtonReload">다시하기</div>
+        <div class="share_button" id="sharePageButtonImg">이미지 저장</div>
+        <a
+          class="share_button"
+          id="sharePageButtonShare"
+          href="javascript:shareMessage()"
+          >공유하기</a
+        >
+      </div>
+    </div>
+    <div class="kakao_ad">
+      <ins
+        class="kakao_ad_area"
+        style="display: none"
+        data-ad-unit="DAN-OJpX8FPdYznCQeOr"
+        data-ad-width="320"
+        data-ad-height="50"
+      ></ins>
+      <script src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+      integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
