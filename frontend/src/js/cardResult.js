@@ -326,28 +326,30 @@ const cardArray = [
   ],
 ];
 
-const selectTaro = [];
-while (cardArray.length > 75) {
-  var taroCard = cardArray.splice(
-    Math.floor(Math.random() * cardArray.length),
-    1
-  )[0];
+export const selectTaro = [];
+export function selectTaroFun() {
+  while (cardArray.length > 75) {
+    var taroCard = cardArray.splice(
+      Math.floor(Math.random() * cardArray.length),
+      1
+    )[0];
 
-  selectTaro.push(taroCard);
+    selectTaro.push(taroCard);
+  }
+
+  const firstTitle = document.querySelector("#card1_title");
+  const secondTitle = document.querySelector("#card2_title");
+  const thirdTitle = document.querySelector("#card3_title");
+
+  const firstImg = document.querySelector("#card1_img");
+  const secondImg = document.querySelector("#card2_img");
+  const thirdImg = document.querySelector("#card3_img");
+
+  firstTitle.innerText = selectTaro[0][0];
+  secondTitle.innerText = selectTaro[1][0];
+  thirdTitle.innerText = selectTaro[2][0];
+
+  firstImg.src = selectTaro[0][1];
+  secondImg.src = selectTaro[1][1];
+  thirdImg.src = selectTaro[2][1];
 }
-
-const firstTitle = document.querySelector("#card1_title");
-const secondTitle = document.querySelector("#card2_title");
-const thirdTitle = document.querySelector("#card3_title");
-
-const firstImg = document.querySelector("#card1_img");
-const secondImg = document.querySelector("#card2_img");
-const thirdImg = document.querySelector("#card3_img");
-
-firstTitle.innerText = selectTaro[0][0];
-secondTitle.innerText = selectTaro[1][0];
-thirdTitle.innerText = selectTaro[2][0];
-
-firstImg.src = selectTaro[0][1];
-secondImg.src = selectTaro[1][1];
-thirdImg.src = selectTaro[2][1];

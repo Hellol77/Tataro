@@ -1,4 +1,4 @@
-function shareMessage() {
+export function shareMessage() {
   Kakao.Share.sendDefault({
     objectType: "feed",
     itemContent: {

@@ -1,3 +1,6 @@
+import { selectTaro } from "./cardResult";
+import { sharePage, totalResultPage } from "./link";
+
 const totalResultChatBox = document.querySelector(".totalResult_chatBox");
 const questionInput = document.querySelector(".insert_text_input");
 const chatInput = document.querySelector(".totalResult_input");
@@ -53,16 +56,20 @@ const myChat = () => {
       `${selectTaro[0][1]} ${selectTaro[1][1]} ${selectTaro[2][1]}`
     );
 
-    myQuestion = questionInput.value;
+    const myQuestion = questionInput.value;
     questionInput.value = "";
+    myChatBox.appendChild(myChat);
+    totalResultChatBox.appendChild(myChatBox);
+    return myQuestion;
   } else {
     myChat.innerText = chatInput.value;
     userMessages.push(chatInput.value);
     chatInput.value = "";
+    const myQuestion = chatInput.value;
+    myChatBox.appendChild(myChat);
+    totalResultChatBox.appendChild(myChatBox);
+    return myQuestion;
   }
-  myChatBox.appendChild(myChat);
-  totalResultChatBox.appendChild(myChatBox);
-  return myQuestion;
 };
 
 //타타로 채팅을 채팅창에 넣기
@@ -124,8 +131,9 @@ const eraseSpinner = () => {
   totalResultChatBox.removeChild(spinnerBox);
 };
 
-async function getTaro() {
-  try { // 정상적으로 실행될 때 수행되는 곳
+export async function getTaro() {
+  try {
+    // 정상적으로 실행될 때 수행되는 곳
     chatInput.disabled = true; // 타타로에게 답변을 받기 전에 사용자가 다시 질문을 보내면 error가 나기 때문에 input 비활성화를 해준다.
     const myQuestion = myChat(); // 사용자의 질문을 채팅창에 나타나게하는 함수
     setSpinner(); // 타타로에게 답변이 오기전 스피너 생성 함수
@@ -151,8 +159,9 @@ async function getTaro() {
     tataroChat(data.assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
     chatInput.disabled = false; // input의 비활성화를 풀어준다.
     return data;
-  } catch (error) { //에러가 났을때 수행되는 곳
+  } catch (error) {
+    //에러가 났을때 수행되는 곳
     window.alert("서버 에러입니다. 다시 접속해주세요!");
-    console.log(error);
+    console.log("error", error);
   }
 }
