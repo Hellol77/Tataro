@@ -14,10 +14,10 @@ export default class View {
     this.element.innerHTML = node;
     return this;
   }
-  on(eventName, handler) {
-    on(eventName, handler);
-    return this;
-  }
+  // on(eventName, handler) {
+  //   on(eventName, handler);
+  //   return this;
+  // }
   bindEvents(eventListeners) {
     eventListeners.forEach(({ element, type, listener }) => {
       element = element || this.element;

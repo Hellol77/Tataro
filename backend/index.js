@@ -75,6 +75,6 @@ app.post("/taro", async function (req, res) {
   res.json({ assistant: taro });
 });
 
-module.exports.handler = serverless(app);  //serverless 사용
+module.exports.handler = serverless(app); //serverless 사용
 
 // app.listen(3000);
