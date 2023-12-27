@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   mode: "production",
-  devtool: "none",
+  devtool: false,
   optimization: { minimizer: [] },
   module: {
     rules: [
