@@ -9,7 +9,7 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
   },
-  mode: "development",
+  mode: "production",
   devtool: "none",
   optimization: { minimizer: [] },
   module: {
