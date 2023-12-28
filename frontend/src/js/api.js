@@ -78,7 +78,10 @@ const myChat = () => {
 const type = (assistant, typewriter, index) => {
   totalResultChatBox.scrollTop = totalResultChatBox.scrollHeight;
   if (index < assistant.length) {
-    typewriter.innerHTML = assistant.slice(0, index);
+    if (assistant[index] === "<" || assistant[index] === ">") {
+      index = index + 2;
+    }
+    typewriter.innerHTML = assistant.slice(0, index + 1);
     index++;
     setTimeout(() => type(assistant, typewriter, index), Math.random() * 150);
   }
@@ -91,7 +94,7 @@ const type = (assistant, typewriter, index) => {
 };
 
 //타타로 채팅을 채팅창에 넣기
-const tataroChat = (assistant, myQuestion) => {
+const tataroChat = (assistant, myQuestion, isSuccess) => {
   const tataroChatBox = document.createElement("div");
   tataroChatBox.classList.add("totalResult_tataroChatBox");
   const tataroChatTime = document.createElement("div");
@@ -102,38 +105,63 @@ const tataroChat = (assistant, myQuestion) => {
 
   const totalResultButton = document.createElement("div");
   const totalResultShare = document.createElement("div");
+  const blessings = document.createElement("a");
   // tataroChat.innerText = assistant;
   const totalResultResume = document.createElement("div");
   tataroChatTime.innerText = sendTime();
   tataroChatBox.appendChild(tataroChatTime);
+  totalResultButton.classList.add("totalResult_button");
 
   //타타로의 첫 채팅인 경우
   if (first == true) {
-    first = false;
-    totalResultButton.classList.add("totalResult_button");
-    totalResultShare.classList.add("totalResult_share");
-    totalResultShare.innerText = "공유하기";
     totalResultResume.classList.add("totalResult_share");
     totalResultResume.innerText = "다시하기";
+    totalResultResume.addEventListener("click", () => {
+      window.location.reload();
+    });
+
+    totalResultShare.classList.add("totalResult_share");
+    totalResultShare.innerText = "공유하기";
+    totalResultShare.addEventListener("click", () => {
+      totalResultPage.style.display = "none";
+      sharePage.style.display = "flex";
+    });
+
     totalResultButton.appendChild(totalResultShare);
     totalResultButton.appendChild(totalResultResume);
     shareMychat.innerText = myQuestion;
     tataroFirstAnswer = assistant;
 
-    totalResultResume.addEventListener("click", () => {
-      window.location.reload();
-    });
-    totalResultShare.addEventListener("click", () => {
-      totalResultPage.style.display = "none";
-      sharePage.style.display = "flex";
-    });
     shareTataroChat.innerText = assistant;
   }
   tataroChatBox.appendChild(tataroChat);
   tataroChat.appendChild(tataroChatTextBox);
   tataroChat.appendChild(totalResultButton);
   totalResultChatBox.appendChild(tataroChatBox);
+  if (isSuccess == true && first == true) {
+    type(
+      `${assistant} <br><br> 다른 질문이 있으시다면 언제든지 말씀해주세요.`,
+      tataroChatTextBox,
+      0
+    );
+    first = false;
+    return;
+  }
+  if (isSuccess == true && first == false) {
+    blessings.classList.add("totalResult_share");
+    blessings.innerText = "복채 보내기";
+    blessings.href = "https://toss.me/hellol77";
+    blessings.target = "_blank";
+    totalResultButton.appendChild(blessings);
+    type(
+      `${assistant} <br><br> 다른 질문이 있으시다면 언제든지 말씀해주세요. <br><br> 작지만 소중한 복채가 서비스 운영에 큰 힘이 됩니다. `,
+      tataroChatTextBox,
+      0
+    );
+    return;
+  }
   type(assistant, tataroChatTextBox, 0);
+  first = false;
 };
 
 //스피너 추가 함수
@@ -182,20 +210,22 @@ export async function getTaro() {
       eraseSpinner();
       tataroChat(
         "죄송해요. 질문을 다시 입력하거나 새로고침 해주세요.",
-        myQuestion
+        myQuestion,
+        false
       );
       return;
     }
     assistantMessages.push(assistant); // 타타로의 답변을 저장
     eraseSpinner(); // 스피너 지워주는 함수
-    tataroChat(assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
+    tataroChat(assistant, myQuestion, true); // 타타로의 답변을 채팅창에 나타나게하는 함수
     return data;
   } catch (error) {
     //에러가 났을때 수행되는 곳
     eraseSpinner();
     tataroChat(
       "죄송해요. 질문을 다시 입력하거나 새로고침 해주세요.",
-      userMessages[0]
+      userMessages[0],
+      false
     );
     console.log("error", error);
   }

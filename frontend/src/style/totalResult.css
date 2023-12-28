@@ -80,18 +80,19 @@
 
 .totalResult_share {
   background-color: #ffcfc0;
-  font-size: 8px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 72px;
   height: 25px;
   border-radius: 15px;
+  text-decoration-line: none;
 }
 .totalResult_button {
   margin-top: 13px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .totalResult_inputBox {
