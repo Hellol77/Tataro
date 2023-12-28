@@ -9,8 +9,9 @@ const shareTataroChat = document.querySelector(".share_tataroChat");
 let first = true;
 let userMessages = [];
 let assistantMessages = [];
+export let userFirstAnswer = "";
+export let tataroFirstAnswer = "";
 // let index = 0;
-
 // let myFirstQuestion;
 // let tataroFirstAnswer;
 // 채팅 보낸 시간을 리턴하는 함수
@@ -49,6 +50,7 @@ const myChat = () => {
   // 첫번째 질문
   if (!!questionInput.value == true) {
     myChat.innerText = questionInput.value;
+    userFirstAnswer = questionInput.value;
     // myFirstQuestion = questionInput.value;
     userMessages.push(questionInput.value); //사용자 질문 저장
 
@@ -116,7 +118,7 @@ const tataroChat = (assistant, myQuestion) => {
     totalResultButton.appendChild(totalResultShare);
     totalResultButton.appendChild(totalResultResume);
     shareMychat.innerText = myQuestion;
-    // tataroFirstAnswer = assistant;
+    tataroFirstAnswer = assistant;
 
     totalResultResume.addEventListener("click", () => {
       window.location.reload();
@@ -172,11 +174,16 @@ export async function getTaro() {
         }),
       }
     );
+
     const data = await response.json();
+
     const assistant = data.assistant;
     if (assistant == "") {
       eraseSpinner();
-      tataroChat("죄송해요. 질문을 다시 입력해주세요.", myQuestion);
+      tataroChat(
+        "죄송해요. 질문을 다시 입력하거나 새로고침 해주세요.",
+        myQuestion
+      );
       return;
     }
     assistantMessages.push(assistant); // 타타로의 답변을 저장
@@ -186,9 +193,11 @@ export async function getTaro() {
     return data;
   } catch (error) {
     //에러가 났을때 수행되는 곳
-    // window.alert("서버 에러입니다. 다시 접속해주세요!");
     eraseSpinner();
-    tataroChat("죄송해요. 질문을 다시 입력해주세요.", userMessages[0]);
+    tataroChat(
+      "죄송해요. 질문을 다시 입력하거나 새로고침 해주세요.",
+      userMessages[0]
+    );
     console.log("error", error);
   }
 }
