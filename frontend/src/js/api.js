@@ -187,7 +187,6 @@ export async function getTaro() {
       return;
     }
     assistantMessages.push(assistant); // 타타로의 답변을 저장
-    console.log(assistant);
     eraseSpinner(); // 스피너 지워주는 함수
     tataroChat(assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
     return data;
