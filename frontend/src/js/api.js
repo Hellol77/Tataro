@@ -9,6 +9,7 @@ const shareTataroChat = document.querySelector(".share_tataroChat");
 let first = true;
 let userMessages = [];
 let assistantMessages = [];
+let index = 0;
 
 // let myFirstQuestion;
 // let tataroFirstAnswer;
@@ -72,6 +73,18 @@ const myChat = () => {
   }
 };
 
+function type(assistant, typewriter) {
+  if (index < assistant.length) {
+    typewriter.innerHTML = assistant.slice(0, index);
+    index++;
+    setTimeout(() => type(assistant, typewriter), Math.random() * 150);
+  }
+  if (index == assistant.length) {
+    typewriter.innerHTML = assistant.slice(0, index);
+  }
+  totalResultChatBox.scrollTop = totalResultChatBox.scrollHeight;
+}
+
 //타타로 채팅을 채팅창에 넣기
 const tataroChat = (assistant, myQuestion) => {
   const tataroChatBox = document.createElement("div");
@@ -80,23 +93,25 @@ const tataroChat = (assistant, myQuestion) => {
   tataroChatTime.classList.add("totalResult_tataroChatTime");
   const tataroChat = document.createElement("div");
   tataroChat.classList.add("totalResult_tataroChat");
-  tataroChat.innerText = assistant;
+  const tataroChatTextBox = document.createElement("div");
+
+  const totalResultButton = document.createElement("div");
+  const totalResultShare = document.createElement("div");
+  // tataroChat.innerText = assistant;
+  const totalResultResume = document.createElement("div");
   tataroChatTime.innerText = sendTime();
   tataroChatBox.appendChild(tataroChatTime);
+
   //타타로의 첫 채팅인 경우
   if (first == true) {
     first = false;
-    const totalResultButton = document.createElement("div");
     totalResultButton.classList.add("totalResult_button");
-    const totalResultShare = document.createElement("div");
     totalResultShare.classList.add("totalResult_share");
     totalResultShare.innerText = "공유하기";
-    const totalResultResume = document.createElement("div");
     totalResultResume.classList.add("totalResult_share");
     totalResultResume.innerText = "다시하기";
     totalResultButton.appendChild(totalResultShare);
     totalResultButton.appendChild(totalResultResume);
-    tataroChat.appendChild(totalResultButton);
     shareMychat.innerText = myQuestion;
     // tataroFirstAnswer = assistant;
 
@@ -110,8 +125,10 @@ const tataroChat = (assistant, myQuestion) => {
     shareTataroChat.innerText = assistant;
   }
   tataroChatBox.appendChild(tataroChat);
+  tataroChat.appendChild(tataroChatTextBox);
+  tataroChat.appendChild(totalResultButton);
   totalResultChatBox.appendChild(tataroChatBox);
-  totalResultChatBox.scrollTop = totalResultChatBox.scrollHeight;
+  type(assistant, tataroChatTextBox);
 };
 
 //스피너 추가 함수
@@ -155,7 +172,6 @@ export async function getTaro() {
     const data = await response.json();
     assistantMessages.push(data.assistant); // 타타로의 답변을 저장
     eraseSpinner(); // 스피너 지워주는 함수
-
     tataroChat(data.assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
     chatInput.disabled = false; // input의 비활성화를 풀어준다.
     return data;

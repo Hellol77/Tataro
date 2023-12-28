@@ -24,7 +24,6 @@ function toggleCardSelection(card) {
   }
 
   chooseCardSelect.style.display = cardCount === 3 ? "flex" : "none";
-  console.log(cardCount);
 }
 
 function handleCardClick(event) {

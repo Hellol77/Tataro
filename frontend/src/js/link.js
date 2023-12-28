@@ -44,7 +44,6 @@ insertButton.addEventListener("click", (e) => {
   if (insertValue.value == "") {
     return;
   } else {
-    getTaro();
     insertPage.style.display = "none";
     chooseCardPage.style.display = "flex";
   }
@@ -52,6 +51,7 @@ insertButton.addEventListener("click", (e) => {
 chooseCardButton.addEventListener("click", () => {
   chooseCardPage.style.display = "none";
   cardResultPage.style.display = "flex";
+  getTaro();
 });
 cardResultButton.addEventListener("click", () => {
   cardResultPage.style.display = "none";
@@ -75,7 +75,6 @@ function inputEnterKey() {
   if (insertValue.value == "") {
     return;
   } else {
-    getTaro();
     insertPage.style.display = "none";
     chooseCardPage.style.display = "flex";
   }
