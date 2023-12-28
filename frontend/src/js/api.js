@@ -73,7 +73,7 @@ const myChat = () => {
   }
 };
 
-function type(assistant, typewriter, index) {
+const type = (assistant, typewriter, index) => {
   totalResultChatBox.scrollTop = totalResultChatBox.scrollHeight;
   if (index < assistant.length) {
     typewriter.innerHTML = assistant.slice(0, index);
@@ -82,9 +82,11 @@ function type(assistant, typewriter, index) {
   }
   if (index == assistant.length) {
     typewriter.innerHTML = assistant.slice(0, index);
+    chatInput.disabled = false; // input의 비활성화를 풀어준다.
+
     return;
   }
-}
+};
 
 //타타로 채팅을 채팅창에 넣기
 const tataroChat = (assistant, myQuestion) => {
@@ -171,16 +173,22 @@ export async function getTaro() {
       }
     );
     const data = await response.json();
-    assistantMessages.push(data.assistant); // 타타로의 답변을 저장
-    console.log(data.assistant);
+    const assistant = data.assistant;
+    if (assistant == "") {
+      eraseSpinner();
+      tataroChat("죄송해요. 질문을 다시 입력해주세요.", myQuestion);
+      return;
+    }
+    assistantMessages.push(assistant); // 타타로의 답변을 저장
+    console.log(assistant);
     eraseSpinner(); // 스피너 지워주는 함수
-    tataroChat(data.assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
-    chatInput.disabled = false; // input의 비활성화를 풀어준다.
+    tataroChat(assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
     return data;
   } catch (error) {
     //에러가 났을때 수행되는 곳
     // window.alert("서버 에러입니다. 다시 접속해주세요!");
-    tataroChat("죄송해요. 질문을 다시 입력해주세요.", myQuestion);
+    eraseSpinner();
+    tataroChat("죄송해요. 질문을 다시 입력해주세요.", userMessages[0]);
     console.log("error", error);
   }
 }
