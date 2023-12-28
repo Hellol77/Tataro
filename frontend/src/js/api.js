@@ -9,7 +9,7 @@ const shareTataroChat = document.querySelector(".share_tataroChat");
 let first = true;
 let userMessages = [];
 let assistantMessages = [];
-let index = 0;
+// let index = 0;
 
 // let myFirstQuestion;
 // let tataroFirstAnswer;
@@ -73,16 +73,17 @@ const myChat = () => {
   }
 };
 
-function type(assistant, typewriter) {
+function type(assistant, typewriter, index) {
+  totalResultChatBox.scrollTop = totalResultChatBox.scrollHeight;
   if (index < assistant.length) {
     typewriter.innerHTML = assistant.slice(0, index);
     index++;
-    setTimeout(() => type(assistant, typewriter), Math.random() * 150);
+    setTimeout(() => type(assistant, typewriter, index), Math.random() * 150);
   }
   if (index == assistant.length) {
     typewriter.innerHTML = assistant.slice(0, index);
+    return;
   }
-  totalResultChatBox.scrollTop = totalResultChatBox.scrollHeight;
 }
 
 //타타로 채팅을 채팅창에 넣기
@@ -128,7 +129,7 @@ const tataroChat = (assistant, myQuestion) => {
   tataroChat.appendChild(tataroChatTextBox);
   tataroChat.appendChild(totalResultButton);
   totalResultChatBox.appendChild(tataroChatBox);
-  type(assistant, tataroChatTextBox);
+  type(assistant, tataroChatTextBox,0);
 };
 
 //스피너 추가 함수
@@ -171,6 +172,7 @@ export async function getTaro() {
     );
     const data = await response.json();
     assistantMessages.push(data.assistant); // 타타로의 답변을 저장
+    console.log(data.assistant);
     eraseSpinner(); // 스피너 지워주는 함수
     tataroChat(data.assistant, myQuestion); // 타타로의 답변을 채팅창에 나타나게하는 함수
     chatInput.disabled = false; // input의 비활성화를 풀어준다.
