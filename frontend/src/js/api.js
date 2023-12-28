@@ -129,7 +129,7 @@ const tataroChat = (assistant, myQuestion) => {
   tataroChat.appendChild(tataroChatTextBox);
   tataroChat.appendChild(totalResultButton);
   totalResultChatBox.appendChild(tataroChatBox);
-  type(assistant, tataroChatTextBox,0);
+  type(assistant, tataroChatTextBox, 0);
 };
 
 //스피너 추가 함수
@@ -179,7 +179,8 @@ export async function getTaro() {
     return data;
   } catch (error) {
     //에러가 났을때 수행되는 곳
-    window.alert("서버 에러입니다. 다시 접속해주세요!");
+    // window.alert("서버 에러입니다. 다시 접속해주세요!");
+    tataroChat("죄송해요. 질문을 다시 입력해주세요.", myQuestion);
     console.log("error", error);
   }
 }
