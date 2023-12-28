@@ -49,7 +49,9 @@ app.post("/taro", async function (req, res) {
       messages.push(
         JSON.parse(
           '{"role": "user", "content": "' +
-            String(userMessages.shift()).replace(/\n/g, "") +
+            String(userMessages.shift())
+              .replace(/\n/g, "")
+              .replace(/"/g, '\\"') +
             '"}'
         )
       );
@@ -58,7 +60,9 @@ app.post("/taro", async function (req, res) {
       messages.push(
         JSON.parse(
           '{"role": "assistant", "content": "' +
-            String(assistantMessages.shift()).replace(/\n/g, "") +
+            String(assistantMessages.shift())
+              .replace(/\n/g, "")
+              .replace(/"/g, '\\"') +
             '"}'
         )
       );
@@ -75,6 +79,6 @@ app.post("/taro", async function (req, res) {
   res.json({ assistant: taro });
 });
 
-module.exports.handler = serverless(app);  //serverless 사용
+module.exports.handler = serverless(app); //serverless 사용
 
 // app.listen(3000);
