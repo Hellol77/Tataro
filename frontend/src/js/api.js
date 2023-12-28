@@ -1,4 +1,5 @@
 import { selectTaro } from "./cardResult";
+import { shareMessage } from "./kakaoShareMessage";
 import { sharePage, totalResultPage } from "./link";
 
 const totalResultChatBox = document.querySelector(".totalResult_chatBox");
@@ -106,29 +107,29 @@ const tataroChat = (assistant, myQuestion, isSuccess) => {
   const totalResultButton = document.createElement("div");
   const totalResultShare = document.createElement("div");
   const blessings = document.createElement("a");
-  // tataroChat.innerText = assistant;
-  const totalResultResume = document.createElement("div");
+  const totalResultDetail = document.createElement("div");
+
   tataroChatTime.innerText = sendTime();
   tataroChatBox.appendChild(tataroChatTime);
   totalResultButton.classList.add("totalResult_button");
 
   //타타로의 첫 채팅인 경우
   if (first == true) {
-    totalResultResume.classList.add("totalResult_share");
-    totalResultResume.innerText = "다시하기";
-    totalResultResume.addEventListener("click", () => {
-      window.location.reload();
+    totalResultShare.classList.add("totalResult_share");
+    totalResultShare.innerText = "타로 내용 공유";
+    totalResultShare.addEventListener("click", () => {
+      shareMessage();
     });
 
-    totalResultShare.classList.add("totalResult_share");
-    totalResultShare.innerText = "공유하기";
-    totalResultShare.addEventListener("click", () => {
+    totalResultDetail.classList.add("totalResult_share");
+    totalResultDetail.innerText = "자세히 보기";
+    totalResultDetail.addEventListener("click", () => {
       totalResultPage.style.display = "none";
       sharePage.style.display = "flex";
     });
 
     totalResultButton.appendChild(totalResultShare);
-    totalResultButton.appendChild(totalResultResume);
+    totalResultButton.appendChild(totalResultDetail);
     shareMychat.innerText = myQuestion;
     tataroFirstAnswer = assistant;
 
