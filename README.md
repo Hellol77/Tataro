@@ -1,7 +1,10 @@
 # 타로보는 타타로 https://tataro.pages.dev/
 
 - ## 사용자수 1000명 달성!
+  
+<div align="center">
 <img width="801" alt="image" src="https://github.com/Hellol77/Tataro/assets/76903801/91c688c9-6c81-4616-8a69-5a50e48e4412">
+</div>
 
 ---
 
