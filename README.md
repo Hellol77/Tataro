@@ -3,11 +3,6 @@
 - ## 사용자수 1000명 달성!
 <img width="801" alt="image" src="https://github.com/Hellol77/Tataro/assets/76903801/91c688c9-6c81-4616-8a69-5a50e48e4412">
 
-
-
-- ## 에브리타임 공감 100개 달성! BEST게시판 게시!
-<img width="779" alt="image" src="https://github.com/hufslion11th/5Team_mini_project/assets/76903801/9e4110e1-68a5-4890-a67c-03e19aa9632c">
-
 ---
 
 <div align="center">
