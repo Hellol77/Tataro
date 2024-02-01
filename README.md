@@ -1,9 +1,5 @@
 # 타로보는 타타로 https://tataro.pages.dev/
 
-
-- ### 멋쟁이 사자처럼 미니프로젝트를 배포하기 위한 repository입니다.
-https://github.com/hufslion11th/5Team_mini_project
-
 - ## 사용자수 1000명 달성!
 <img width="801" alt="image" src="https://github.com/Hellol77/Tataro/assets/76903801/91c688c9-6c81-4616-8a69-5a50e48e4412">
 
