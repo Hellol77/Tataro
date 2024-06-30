@@ -44,10 +44,11 @@
 .share_button_box {
   display: flex;
   margin-top: 15px;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: 320px;
 }
 .share_button {
+  cursor: pointer;
   color: black;
   background-color: #ffcfc0;
   width: 65px;

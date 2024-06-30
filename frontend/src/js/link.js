@@ -15,7 +15,7 @@ export const totalResultPage = document.getElementById("totalResult_page");
 const totalResultButton = document.getElementById("totalResult_Button");
 const chatInput = document.querySelector(".totalResult_input");
 const totalResultInput = document.getElementById("totalResult_input_value");
-const sharePageButton = document.getElementById("sharePageButtonShare");
+const sharePageButton = document.querySelectorAll(".sharePageButtonShare");
 const totalResultShareButton = document.getElementById(
   "totalResultShare_button"
 );
@@ -25,7 +25,7 @@ const totalResultResumeButton = document.getElementById(
 const totalResultInputValue = document.getElementById(
   "totalResult_input_value"
 );
-const shareButtonReload = document.getElementById("sharePageButtonReload");
+const shareButtonReload = document.querySelectorAll(".sharePageButtonReload");
 export const sharePage = document.getElementById("share_page");
 
 insertValue.addEventListener("focus", function () {
@@ -87,13 +87,17 @@ function totalResultInputEnterKey() {
   }
 }
 
-sharePageButton.addEventListener("click", function () {
-  // 클릭되었을 때 실행할 JavaScript 함수
-  shareMessage();
+sharePageButton.forEach((button) => {
+  button.addEventListener("click", function () {
+    // 클릭되었을 때 실행할 JavaScript 함수
+    shareMessage();
+  });
 });
 
-shareButtonReload.addEventListener("click", () => {
-  window.location.reload();
+shareButtonReload.forEach((button) => {
+  button.addEventListener("click", () => {
+    window.location.reload();
+  });
 });
 
 insertValue.addEventListener("keypress", function (e) {
