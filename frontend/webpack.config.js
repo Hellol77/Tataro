@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/js/main.js",
@@ -44,6 +45,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: "src/index.html" }),
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: "src/robots.txt", to: "robots.txt" }],
+    }),
     new MiniCssExtractPlugin({ filename: "app.css" }),
   ],
 };
