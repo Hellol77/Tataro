@@ -48,12 +48,15 @@
   width: 320px;
 }
 .share_button {
+  font-family: "KCCChassam";
   cursor: pointer;
+  border: none;
   color: black;
   background-color: #ffcfc0;
   width: 65px;
   height: 24px;
   display: flex;
+  padding: 0px;
   justify-content: center;
   align-items: center;
   border-radius: 15px;

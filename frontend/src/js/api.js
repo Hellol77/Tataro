@@ -105,7 +105,7 @@ const tataroChat = (assistant, myQuestion, isSuccess) => {
   const tataroChatTextBox = document.createElement("div");
 
   const totalResultButton = document.createElement("div");
-  const totalResultShare = document.createElement("div");
+  const totalResultShare = document.createElement("button");
   const blessings = document.createElement("a");
   const totalResultDetail = document.createElement("div");
 

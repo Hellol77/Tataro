@@ -80,6 +80,8 @@
 
 .totalResult_share {
   cursor: pointer;
+  font-family: "KCCChassam";
+  border: none;
   background-color: #ffcfc0;
   font-size: 10px;
   display: flex;
