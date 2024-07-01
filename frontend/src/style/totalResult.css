@@ -79,6 +79,7 @@
 }
 
 .totalResult_share {
+  cursor: pointer;
   background-color: #ffcfc0;
   font-size: 10px;
   display: flex;
