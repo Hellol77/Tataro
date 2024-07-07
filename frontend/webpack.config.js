@@ -12,7 +12,12 @@ module.exports = {
   },
   mode: "production",
   // devtool: false,
-  optimization: { minimizer: [] },
+  optimization: {
+    minimizer: [],
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   module: {
     rules: [
       {
