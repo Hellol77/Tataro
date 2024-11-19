@@ -12,6 +12,15 @@ import { selectTaroFun } from "./cardResult.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   selectTaroFun();
+  const inputArea = document.querySelector(".input-area");
+  const originalHeight = window.innerHeight;
 
-  // Add your project's initialization code or logic here
+  window.addEventListener("resize", () => {
+    const currentHeight = window.innerHeight;
+    if (currentHeight < originalHeight) {
+      inputArea.style.marginBottom = `${originalHeight - currentHeight}px`;
+    } else {
+      inputArea.style.marginBottom = "0px";
+    }
+  });
 });
