@@ -1,4 +1,4 @@
-# 타로보는 타타로 https://tataro.pages.dev/
+# 타로보는 타타로 https://tataro.net/
 
 - ## 사용자수 1000명 달성!
   
