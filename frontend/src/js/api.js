@@ -191,7 +191,7 @@ export async function getTaro() {
 
     // 타로 질문 주고 결과 받는 api, userMessages 와 assistantMessages에 사용자와 타타로가 대화할때마다 대화를 저장한다.
     const response = await fetch(
-      " https://jivbftmrucu77b73iap3ofhydq0uhuzr.lambda-url.ap-northeast-2.on.aws/taro",
+      "https://jkqzhh3phwjx66oo5cc4lod3p40tcywo.lambda-url.ap-northeast-2.on.aws/taro",
       {
         method: "POST",
         headers: {

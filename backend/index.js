@@ -14,7 +14,7 @@ const openai = new OpenAIApi(configuration);
 
 // cors 이슈해결
 const corsOptions = {
-  origin: "https://tataro.pages.dev",
+  origin: "https://tataro.net",
   credentials: true,
 };
 
