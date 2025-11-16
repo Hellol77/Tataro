@@ -3,7 +3,6 @@ require("dotenv").config();
 const apiKey = process.env.CHAT_GPT_KEY;
 const serverless = require("serverless-http");
 const { Configuration, OpenAIApi } = require("openai");
-const cors = require("cors");
 const express = require("express");
 const app = express();
 
@@ -12,13 +11,8 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-// cors 이슈해결
-const corsOptions = {
-  origin: "https://tataro.net",
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+// cors 이슈해결 - Lambda Function URL CORS 사용
+// Express CORS 비활성화 (중복 방지)
 
 // post 요청
 app.use(express.json()); // for parsing application/json
@@ -69,7 +63,7 @@ app.post("/taro", async function (req, res) {
     }
   }
   const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4o-mini",
     max_tokens: 300,
     temperature: 0.5,
     messages: messages,
